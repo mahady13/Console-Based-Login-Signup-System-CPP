@@ -93,7 +93,9 @@ void temporary::login(){
 
     bool userfound=false;
 
-    while(!file.eof()){
+    while(getline(file,username,'*')&&
+        getline(file,email,'*')&&
+        getline(file,password,'\n')){
         if(username==searchname){
             if(password==searchpass){
                 cout<<"\nLogin Successful.....!";
@@ -131,7 +133,9 @@ void temporary::forgot(){
 
     bool userfound=false;
 
-    while(!file.eof()){
+    while(getline(file,username,'*')&&
+        getline(file,email,'*')&&
+        getline(file,password,'\n')){
         if(searchname==username){
             if(email==searchemail){
                 cout<<"Account successfully found!\n";
